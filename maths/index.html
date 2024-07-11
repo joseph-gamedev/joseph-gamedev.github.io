@@ -12,6 +12,8 @@
         <link rel="prev" href="../gameplay/">
       
       
+        <link rel="next" href="../questions/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
@@ -399,6 +401,23 @@
     
   
   Maths
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../questions/" class="md-tabs__link">
+        
+  
+    
+  
+  Questions
 
       </a>
     </li>
@@ -1179,6 +1198,84 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#basics-of-homogeneous-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basics of Homogeneous Coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-properties-and-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Properties and Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformations-in-homogeneous-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformations in Homogeneous Coordinates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformations in Homogeneous Coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-in-computer-graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications in Computer Graphics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-in-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example in 3D
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#8-combining-transformations" class="md-nav__link">
     <span class="md-ellipsis">
       8. Combining Transformations
@@ -1273,7 +1370,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#translation_1" class="md-nav__link">
+  <a href="#translation_2" class="md-nav__link">
     <span class="md-ellipsis">
       Translation
     </span>
@@ -1282,7 +1379,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rotation_1" class="md-nav__link">
+  <a href="#rotation_2" class="md-nav__link">
     <span class="md-ellipsis">
       Rotation
     </span>
@@ -1291,7 +1388,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#scaling_1" class="md-nav__link">
+  <a href="#scaling_2" class="md-nav__link">
     <span class="md-ellipsis">
       Scaling
     </span>
@@ -2619,6 +2716,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../questions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2853,8 +2970,166 @@ s_x &amp; 0 &amp; 0 &amp; 0 \\
 <p>Consider the transformation of a vector by translation, rotation, and scaling:</p>
 <p><img alt="Transformations" src="https://i.imgur.com/Wc7Ew3M.png" /></p>
 <h3 id="7-homogeneous-coordinates">7. Homogeneous Coordinates</h3>
-<p>In computer graphics, homogeneous coordinates are used to represent points in projective space. A 3D point <span class="arithmatex">\((x, y, z)\)</span> can be represented in homogeneous coordinates as ((x, y, z, </p>
-<p>1)). This allows for the use of 4x4 matrices to perform transformations.</p>
+<p>Homogeneous coordinates are an extension of Cartesian coordinates that simplify the mathematics of projective geometry. They are particularly useful in computer graphics, robotics, and computer vision. In homogeneous coordinates, an extra dimension is added to the coordinates, allowing for the representation of transformations like translation, scaling, and rotation in a more unified and convenient way. </p>
+<h3 id="basics-of-homogeneous-coordinates">Basics of Homogeneous Coordinates</h3>
+<p>In 2D Cartesian coordinates, a point is represented as <span class="arithmatex">\((x, y)\)</span>. In homogeneous coordinates, this point is represented as <span class="arithmatex">\((x, y, w)\)</span>, where <span class="arithmatex">\(w\)</span> is a non-zero scalar. Typically, <span class="arithmatex">\(w\)</span> is set to 1 for convenience, so a point <span class="arithmatex">\((x, y)\)</span> in Cartesian coordinates corresponds to <span class="arithmatex">\((x, y, 1)\)</span> in homogeneous coordinates.</p>
+<p>Similarly, in 3D Cartesian coordinates, a point <span class="arithmatex">\((x, y, z)\)</span> is represented in homogeneous coordinates as <span class="arithmatex">\((x, y, z, w)\)</span>. Again, <span class="arithmatex">\(w\)</span> is usually set to 1.</p>
+<h3 id="key-properties-and-advantages">Key Properties and Advantages</h3>
+<ol>
+<li>
+<p><strong>Representation of Points at Infinity</strong>:</p>
+<ul>
+<li>Points at infinity can be represented in homogeneous coordinates. For example, in 2D, the point <span class="arithmatex">\((x, y, 0)\)</span> represents a point at infinity in the direction of <span class="arithmatex">\((x, y)\)</span>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Simplified Mathematical Operations</strong>:</p>
+<ul>
+<li>Operations like translation, which are not linear in Cartesian coordinates, become linear in homogeneous coordinates. This simplifies the combination and application of multiple transformations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Affine Transformations</strong>:</p>
+<ul>
+<li>Homogeneous coordinates allow for the representation of all affine transformations (translation, rotation, scaling, and shear) as matrix multiplications. This is particularly useful in computer graphics for applying a series of transformations efficiently.</li>
+</ul>
+</li>
+</ol>
+<p>For example, a 2D transformation matrix:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+a &amp; b &amp; c \\
+d &amp; e &amp; f \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<p>can be applied to a point <span class="arithmatex">\((x, y, 1)\)</span> to yield a transformed point.</p>
+<h3 id="transformations-in-homogeneous-coordinates">Transformations in Homogeneous Coordinates</h3>
+<h4 id="translation_1">Translation</h4>
+<p>To translate a point <span class="arithmatex">\((x, y)\)</span> by <span class="arithmatex">\((t_x, t_y)\)</span>:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+1 &amp; 0 &amp; t_x \\
+0 &amp; 1 &amp; t_y \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+x + t_x \\
+y + t_y \\
+1
+\end{bmatrix}
+\]</div>
+<h4 id="scaling_1">Scaling</h4>
+<p>To scale a point <span class="arithmatex">\((x, y)\)</span> by <span class="arithmatex">\((s_x, s_y)\)</span>:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+s_x &amp; 0 &amp; 0 \\
+0 &amp; s_y &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+s_x x \\
+s_y y \\
+1
+\end{bmatrix}
+\]</div>
+<h4 id="rotation_1">Rotation</h4>
+<p>To rotate a point <span class="arithmatex">\((x, y)\)</span> by an angle <span class="arithmatex">\(\theta\)</span> about the origin:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+\cos \theta &amp; -\sin \theta &amp; 0 \\
+\sin \theta &amp; \cos \theta &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+x \cos \theta - y \sin \theta \\
+x \sin \theta + y \cos \theta \\
+1
+\end{bmatrix}
+\]</div>
+<h3 id="applications-in-computer-graphics">Applications in Computer Graphics</h3>
+<ol>
+<li>
+<p><strong>3D Transformations</strong>:</p>
+<ul>
+<li>In 3D graphics, homogeneous coordinates are used to apply transformations to 3D models. The extra coordinate allows for translation, rotation, and scaling to be represented as matrix multiplications.</li>
+</ul>
+</li>
+<li>
+<p><strong>Perspective Projection</strong>:</p>
+<ul>
+<li>Homogeneous coordinates facilitate the representation of perspective projection, which is essential for rendering 3D scenes onto a 2D screen. A perspective projection matrix can be used to transform points in 3D space to points in 2D screen space.</li>
+</ul>
+</li>
+<li>
+<p><strong>Camera Transformations</strong>:</p>
+<ul>
+<li>Homogeneous coordinates are used to represent and manipulate the camera's position and orientation in the scene.</li>
+</ul>
+</li>
+</ol>
+<h3 id="example-in-3d">Example in 3D</h3>
+<p>To transform a point <span class="arithmatex">\((x, y, z)\)</span> using a combination of translation, rotation, and scaling:</p>
+<div class="arithmatex">\[
+\mathbf{T} = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; t_x \\
+0 &amp; 1 &amp; 0 &amp; t_y \\
+0 &amp; 0 &amp; 1 &amp; t_z \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix},
+\mathbf{R} = \begin{bmatrix}
+R_{11} &amp; R_{12} &amp; R_{13} &amp; 0 \\
+R_{21} &amp; R_{22} &amp; R_{23} &amp; 0 \\
+R_{31} &amp; R_{32} &amp; R_{33} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix},
+\mathbf{S} = \begin{bmatrix}
+s_x &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; s_y &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; s_z &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<p>The combined transformation matrix is:</p>
+<div class="arithmatex">\[
+\mathbf{M} = \mathbf{T} \mathbf{R} \mathbf{S}
+\]</div>
+<p>Applying this to a point <span class="arithmatex">\((x, y, z, 1)\)</span>:</p>
+<div class="arithmatex">\[
+\mathbf{M}
+\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+x' \\
+y' \\
+z' \\
+1
+\end{bmatrix}
+\]</div>
+<p>This unified approach simplifies complex transformations and is essential for efficient and effective computer graphics operations.</p>
 <h3 id="8-combining-transformations">8. Combining Transformations</h3>
 <p>Transformations can be combined by multiplying their matrices. For a combination of translation, rotation, and scaling:</p>
 <div class="arithmatex">\[
@@ -2871,8 +3146,8 @@ s_x &amp; 0 &amp; 0 &amp; 0 \\
 \end{pmatrix}
 \]</div>
 <h3 id="diagram-for-perspective-projection">Diagram for Perspective Projection</h3>
-<p>Consider the projection of a 3D point onto a 2D plane:</p>
-<p><img alt="Perspective Projection" src="https://i.imgur.com/DsL7RAG.png" /></p>
+<p>Projection of a 3D Car onto a 2D plane:</p>
+<p><img alt="Perspective Projection" src="../images/perspective-projection.png" /></p>
 <h3 id="10-applications-in-game-development">10. Applications in Game Development</h3>
 <h4 id="graphics_1">Graphics</h4>
 <ul>
@@ -2893,7 +3168,7 @@ s_x &amp; 0 &amp; 0 &amp; 0 \\
 <p>The transformation pipeline is a critical concept in 3D graphics and game development. It involves transforming 3D objects from their local object space to the 2D screen space for rendering. The transformation pipeline consists of several stages, including model transformation, view transformation, projection transformation, and viewport transformation. Each stage involves applying specific mathematical operations, primarily using matrices. Here's a detailed explanation of each stage with diagrams and equations.</p>
 <h3 id="1-model-transformation">1. Model Transformation</h3>
 <p>The model transformation (also known as the world transformation) converts object coordinates from local object space to world space. This involves translating, rotating, and scaling the object.</p>
-<h4 id="translation_1">Translation</h4>
+<h4 id="translation_2">Translation</h4>
 <p>To translate an object by a vector <span class="arithmatex">\(\mathbf{T} = (T_x, T_y, T_z)\)</span>, we use the translation matrix:</p>
 <div class="arithmatex">\[
 \mathbf{M}_{\text{translate}} =
@@ -2904,7 +3179,7 @@ s_x &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 1
 \end{bmatrix}
 \]</div>
-<h4 id="rotation_1">Rotation</h4>
+<h4 id="rotation_2">Rotation</h4>
 <p>To rotate an object around the x-axis, y-axis, and z-axis by angles <span class="arithmatex">\(\theta_x\)</span>, <span class="arithmatex">\(\theta_y\)</span>, and <span class="arithmatex">\(\theta_z\)</span> respectively, we use the rotation matrices:</p>
 <div class="arithmatex">\[
 \mathbf{M}_{\text{rotate}_x} =
@@ -2933,7 +3208,7 @@ s_x &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 1
 \end{bmatrix}
 \]</div>
-<h4 id="scaling_1">Scaling</h4>
+<h4 id="scaling_2">Scaling</h4>
 <p>To scale an object by factors <span class="arithmatex">\(S_x\)</span>, <span class="arithmatex">\(S_y\)</span>, and <span class="arithmatex">\(S_z\)</span>, we use the scaling matrix:</p>
 <div class="arithmatex">\[
 \mathbf{M}_{\text{scale}} =
